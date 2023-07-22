@@ -1,0 +1,30 @@
+.input_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.drop_box {
+    width: 100%;
+    height: 200px;
+    border: 1px solid var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accepted_files {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.submit_button {
+    padding: 16px;
+    background: none;
+    border: solid 1px var(--primary);
+    cursor: pointer;
+}

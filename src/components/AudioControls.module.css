@@ -1,0 +1,13 @@
+.pause,
+.play {
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: none;
+    font-size: 40px;
+}
+
+.play_icon,
+.pause_icon {
+    stroke-width: 1;
+}
