@@ -12,22 +12,21 @@ export default function AudioInput({ setData }) {
         }
     }, [])
 
-    const sendPayload = () => {
+    const sendPayload = async () => {
         const formData = new FormData();
-        formData.append('audioFile', file);
-
-        fetch('/api/mood', {
+        formData.append('audioFile', file); 
+        const res = await fetch(`${process.env.NEXT_PUBLIC_FLASK_ENDPOINT}/api/mood`, {
             method: "POST",
             body: formData
-        }).then(async res => {
-            const data = await res.json()
-            const output = {
-                filePath: file.path,
-                name: file.name,
-                url: URL.createObjectURL(file),
-                ...data,
-            }
-            setData(output)
+        })
+
+        const data = await res.json()
+
+        setData({
+            filePath: file.path,
+            name: file.name,
+            url: URL.createObjectURL(file),
+            ...data,
         })
     }
     const {getRootProps, getInputProps, isDragActive} = useDropzone({
