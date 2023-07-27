@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
-
+import { IoReturnUpBackOutline } from 'react-icons/io5'
 import styles from './AudioDisplay.module.css'
 
 import AudioControls from './AudioControls';
-export default function AudioDisplay({ songData }) {
+export default function AudioDisplay({ songData, setSongData }) {
     const { name, url, predictions, counts, sample_interval } = songData
     const audioElement = new Audio(url);
     const [trackProgress, setTrackProgress] = useState(0);
@@ -81,6 +81,13 @@ export default function AudioDisplay({ songData }) {
 
     return (
     <div className={styles.display_container}>
+        <div
+          onClick={() => setSongData(null)} 
+          className={styles.back_container}
+        >
+          <IoReturnUpBackOutline/>
+          <p>back to home</p>
+        </div>
         <h3>{name}/</h3>
         <p>{JSON.stringify(counts)}</p>
         <p>CURRENT MOOD</p>

@@ -11,6 +11,21 @@
     transition: background-color 7s ease;
 }
 
+.back_container {
+    position: fixed;
+    left: var(--spacer);
+    top: var(--spacer);
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    gap: var(--tinySpacer);
+    cursor: pointer;
+}
+
+.back_container:hover {
+    transform: scale(1.02);
+}
+
 .audio_player {
     width: 100%;
     display: flex;

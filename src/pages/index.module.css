@@ -4,6 +4,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 48px;
+    padding: var(--largerSpacer);
     gap: 36px;
 }
