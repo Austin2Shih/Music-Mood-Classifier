@@ -15,12 +15,17 @@ const useAudioPlayer = (audioRef) => {
     setDuration(audioRef.current.duration);
   };
 
+  const handleAudioEnded = () => {
+    setIsPlaying(false)
+    setCurrentTime(0)
+  }
+
   useEffect(() => {
     const audioElement = audioRef.current;
-
     if (audioElement) {
       audioElement.addEventListener('timeupdate', updateTime);
       audioElement.addEventListener('loadedmetadata', updateDuration);
+      audioElement.addEventListener('ended', handleAudioEnded); // Add event listener for audio ended
       setIsReady(true); // Mark the audio element as ready
     }
 
@@ -28,6 +33,7 @@ const useAudioPlayer = (audioRef) => {
       if (audioElement) {
         audioElement.removeEventListener('timeupdate', updateTime);
         audioElement.removeEventListener('loadedmetadata', updateDuration);
+        audioElement.removeEventListener('ended', handleAudioEnded); // Add event listener for audio ended
       }
     };
   }, [audioRef]);

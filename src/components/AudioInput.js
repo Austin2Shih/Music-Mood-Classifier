@@ -3,14 +3,17 @@ import {useDropzone} from 'react-dropzone'
 
 import styles from './AudioInput.module.css'
 import SubmissionPopup from './SubmissionPopup'
+import AudioPlayer from './AudioPlayer'
 
 export default function AudioInput({ setData }) {
     const [file, setFile] = useState(null)
     const [pending, setPending] = useState(false);
+    const [fileUrl, setFileUrl] = useState(null)
 
     const onDrop = useCallback(acceptedFiles => {
         if (acceptedFiles?.length) {
             setFile(acceptedFiles[0])
+            setFileUrl(URL.createObjectURL(acceptedFiles[0]))
         }
     }, [])
 
@@ -58,6 +61,11 @@ export default function AudioInput({ setData }) {
                 <h2 className={styles.selected_file_header}>Selected File</h2>
                 <div className={styles.accepted_file}>
                     <p>{file? file.name : 'No File Selected'}</p>
+                    { fileUrl &&
+                        <AudioPlayer 
+                        audioFileUrl={fileUrl}
+                        />
+                    }
                 </div>
              </div>
             <button 

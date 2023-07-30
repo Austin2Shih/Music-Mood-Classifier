@@ -1,4 +1,8 @@
 import React, { useRef, useEffect } from 'react';
+
+import { IoMdPause, IoMdPlay } from 'react-icons/io'
+
+import styles from './AudioPlayer.module.css'
 import useAudioPlayer from '@/hooks/useAudioPlayer';
 
 export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
@@ -22,8 +26,18 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
   } = useAudioPlayer(audioRef);
 
   useEffect(() => {
-    setCurrentTime(currentTime)
+    if (setCurrentTime)
+        setCurrentTime(currentTime)
   }, [currentTime])
+
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause(); // Pause the audio when unmounting
+        audioRef.current = null; // Reset the audioRef
+      }
+    };
+  }, []);
 
   // Seek to a specific time in the audio
   const handleScrub = (e) => {
@@ -44,24 +58,37 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
   };
 
   return (
-    <div>
-      <div>
+    <div className={styles.player_container}>
+      <div className={styles.timing_controls}>
         <button onClick={isPlaying ? pauseAudio : playAudio}>
-          {isPlaying ? 'Pause' : 'Play'}
+          <p className={styles.pause_play}>
+            {isPlaying ? <IoMdPause/> : <IoMdPlay/>}
+          </p>
         </button>
-        <input
-          type="range"
-          min={0}
-          max={duration}
-          value={currentTime}
-          onChange={handleScrub}
-        />
-        <span>{formatTime(currentTime)}</span>
-        <span> / </span>
-        <span>{formatTime(duration)}</span>
+        <div className={styles.progress_bar_container}>
+            <input
+            className={styles.player_progress}
+            type="range"
+            min={0}
+            max={duration}
+            step={0.1}
+            value={currentTime}
+            onChange={handleScrub}
+            />
+            <div 
+            className={styles.progress_trail} 
+            style={{width: `calc(${currentTime/duration} * calc(100% - 12px) + 6px)`}}
+            />
+        </div>
+        <p>
+          <span>{formatTime(currentTime)}</span>
+          <span> / </span>
+          <span>{formatTime(duration)}</span>
+        </p>
       </div>
-      <div>
+      <div className={styles.volume_container}>
         <input
+          className={styles.volume_bar}
           type="range"
           min={0}
           max={1}

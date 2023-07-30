@@ -1,0 +1,53 @@
+.player_container {
+    width: 100%;
+    padding: var(--tinySpacer);
+}
+
+.timing_controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tinierSpacer);
+    align-items: center;
+}
+
+.pause_play {
+    color: var(--textPrimary);
+    font-size: 2rem;
+}
+
+.progress_bar_container {
+    width: 100%;
+    position: relative;
+}
+
+.player_progress {
+    width: 100%;
+}
+
+.player_progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: var(--textPrimary);
+    border-radius: 3px;
+}
+
+.player_progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: var(--textSecondary);
+    border-radius: 50%;
+}
+
+.progress_trail {
+    height: 6px;
+    background-color: var(--textSecondary);
+    position: absolute;
+    top: 9.5px;
+    left: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    pointer-events: none;
+}

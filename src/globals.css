@@ -91,6 +91,12 @@ button {
     color: var(--textPrimary)
 }
 
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
     :root {
         --navbar-height: 60px;

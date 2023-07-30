@@ -1,0 +1,30 @@
+.ranking_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+}
+
+.bar_chart_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--smallSpacer);
+}
+
+.bar_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--smallSpacer);
+}
+
+.bar {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: var(--smallSpacer);
+}

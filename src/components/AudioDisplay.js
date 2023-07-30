@@ -3,9 +3,11 @@ import { IoReturnUpBackOutline } from 'react-icons/io5'
 import styles from './AudioDisplay.module.css'
 
 import AudioPlayer from './AudioPlayer';
+import MoodRanking from './MoodRanking';
+import MoodTimeline from './MoodTimeline';
 
 export default function AudioDisplay({ songData, setSongData }) {
-    const { name, url, predictions, counts, sample_interval } = songData
+    const { name, predictions, counts, sample_interval } = songData
     const [currentTime, setCurrentTime] = useState(0)
     const [mood, setMood] = useState(predictions[0])
 
@@ -22,21 +24,34 @@ export default function AudioDisplay({ songData, setSongData }) {
       document.documentElement.style.setProperty('--active-color', `var(--song-${mood})`);
     }, [mood]);
 
+    const handleExit = () => {
+      setSongData(null)
+    }
+
     return (
-    <div className={styles.display_container}>
+      <>
         <div
-          onClick={() => setSongData(null)} 
-          className={styles.back_container}
+        onClick={handleExit} 
+        className={styles.back_container}
         >
           <IoReturnUpBackOutline/>
           <p>back to home</p>
         </div>
-
-        <h3>{name}/</h3>
-        <p>{JSON.stringify(counts)}</p>
-        <p>CURRENT MOOD</p>
-        <p>{mood}</p>
-        <AudioPlayer audioFileUrl={url} setCurrentTime={setCurrentTime}/>
-    </div>
+        <div className={styles.display_container}>
+          <div className={styles.display_card}>
+            <h3>{name}/</h3>
+            <p>CURRENT MOOD</p>
+            <p>{mood}</p>
+            <AudioPlayer 
+            audioFileUrl={songData.url} 
+            setCurrentTime={setCurrentTime}
+            />
+          </div>
+          <div className={styles.info_container}>
+            <MoodRanking moodData={counts}/>
+            <MoodTimeline moodData={predictions}/>
+          </div>
+        </div>
+      </>
     )
 }
