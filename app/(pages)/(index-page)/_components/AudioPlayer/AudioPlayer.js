@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { IoMdPause, IoMdPlay } from 'react-icons/io'
 
 import styles from './AudioPlayer.module.css'
-import useAudioPlayer from '@/hooks/useAudioPlayer';
+import useAudioPlayer from '@hooks/useAudioPlayer';
 
 export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
   const audioRef = useRef(null)

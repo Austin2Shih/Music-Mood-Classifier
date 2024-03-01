@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { IoReturnUpBackOutline } from 'react-icons/io5'
 import styles from './AudioDisplay.module.css'
 
-import AudioPlayer from './AudioPlayer';
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
 import MoodRanking from './MoodRanking';
 import MoodTimeline from './MoodTimeline';
 
