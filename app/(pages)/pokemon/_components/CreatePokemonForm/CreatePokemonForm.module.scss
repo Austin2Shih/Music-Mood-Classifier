@@ -1,0 +1,18 @@
+.form_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--spacer);
+    border: solid 2px black;
+
+    >form {
+        >div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"] {
+            padding: var(--tiny-spacer);
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacer);
+    gap: var(--tiny-spacer);
+
+    width: 100%;
+    border: solid 1px black;
+    border-radius: var(--b-radius);
+
+    >form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--tiny-spacer);
+        >div {
+            display: flex;
+            flex-direction: column;
+        }
+        >h3 {
+            font-size: 1rem;
+        }
+    }
+
+}
+
+.subtitle {
+    font-size: 1rem;
+}

@@ -1,0 +1,104 @@
+@use 'media';
+
+$scale: 1.04;
+
+.relative_wrapper {
+    position: relative;
+    height: var(--navbar-height);
+    width: 100%;
+}
+
+.container {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: var(--navbar-height);
+    padding: 0 var(--medium-spacer);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--primary);
+
+    >h2 {
+        color: var(--text-light);
+    }
+}
+
+.nav_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    gap: var(--spacer);
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacer);
+        color: var(--text-light);
+
+        >* {
+            padding: var(--tiny-spacer);
+            @include media.tablet {
+                text-align: center;
+                padding: var(--small-spacer);
+            }
+        }
+
+        >*:hover {
+            transform: scale($scale);
+            @include media.tablet {
+                transform: none;
+                border-bottom: solid 2px var(--primary);
+            }
+        }
+
+        @include media.tablet {
+            position: absolute;
+            z-index: -1;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0;
+            overflow: hidden;
+            
+            flex-direction: column;
+            gap: 0;
+            background-color: var(--background-primary);
+            color: var(--text-dark);
+
+            transition: all 0.25s ease-in;
+
+        }
+    }
+
+    @include media.tablet {
+        .links.active {
+            height: calc(100vh - var(--navbar-height));
+        }
+    }
+
+    .menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+
+        * {
+            color: var(--text-light);
+        }
+        @include media.tablet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .menu:hover {
+        transform: scale($scale);
+    }
+}

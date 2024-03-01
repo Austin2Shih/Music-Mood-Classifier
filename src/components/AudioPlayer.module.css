@@ -17,6 +17,7 @@
 
 .progress_bar_container {
     width: 100%;
+    display: flex;
     position: relative;
 }
 
@@ -39,14 +40,17 @@
     height: 12px;
     background: var(--textSecondary);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
 }
 
 .progress_trail {
     height: 6px;
     background-color: var(--textSecondary);
     position: absolute;
-    top: 9.5px;
+    top: 50%;
     left: 0;
+    transform: translateY(-50%);
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     pointer-events: none;
