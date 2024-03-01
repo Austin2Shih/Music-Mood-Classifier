@@ -16,9 +16,9 @@ const useAudioPlayer = (audioRef) => {
   };
 
   const handleAudioEnded = () => {
-    setIsPlaying(false)
-    setCurrentTime(0)
-  }
+    setIsPlaying(false);
+    setCurrentTime(0);
+  };
 
   useEffect(() => {
     const audioElement = audioRef.current;
@@ -39,7 +39,8 @@ const useAudioPlayer = (audioRef) => {
   }, [audioRef]);
 
   const playAudio = () => {
-    if (isReady) { // Check if audio element is ready before accessing its methods
+    if (isReady) {
+      // Check if audio element is ready before accessing its methods
       audioRef.current.play();
       setIsPlaying(true);
     }

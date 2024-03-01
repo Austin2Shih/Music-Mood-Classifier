@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fonts}>
-        <Navbar navLinks={navLinks} />
+        {/* <Navbar navLinks={navLinks} /> */}
         {children}
-        <Footer navLinks={navLinks} />
+        {/* <Footer navLinks={navLinks} /> */}
       </body>
     </html>
   );

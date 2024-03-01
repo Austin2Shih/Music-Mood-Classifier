@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 
-import { IoMdPause, IoMdPlay } from 'react-icons/io'
+import { IoMdPause, IoMdPlay } from 'react-icons/io';
 
-import styles from './AudioPlayer.module.css'
+import styles from './AudioPlayer.module.css';
 import useAudioPlayer from '@hooks/useAudioPlayer';
 
 export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
-  const audioRef = useRef(null)
+  const audioRef = useRef(null);
 
   useEffect(() => {
     // Define the audio element when the component mounts (client-side)
@@ -26,9 +26,8 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
   } = useAudioPlayer(audioRef);
 
   useEffect(() => {
-    if (setCurrentTime)
-        setCurrentTime(currentTime)
-  }, [currentTime])
+    if (setCurrentTime) setCurrentTime(currentTime);
+  }, [currentTime]);
 
   useEffect(() => {
     return () => {
@@ -62,11 +61,11 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
       <div className={styles.timing_controls}>
         <button onClick={isPlaying ? pauseAudio : playAudio}>
           <p className={styles.pause_play}>
-            {isPlaying ? <IoMdPause/> : <IoMdPlay/>}
+            {isPlaying ? <IoMdPause /> : <IoMdPlay />}
           </p>
         </button>
         <div className={styles.progress_bar_container}>
-            <input
+          <input
             className={styles.player_progress}
             type="range"
             min={0}
@@ -74,11 +73,15 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
             step={0.1}
             value={currentTime}
             onChange={handleScrub}
-            />
-            <div 
-            className={styles.progress_trail} 
-            style={{width: `calc(${currentTime/duration} * calc(100% - 12px) + 6px)`}}
-            />
+          />
+          <div
+            className={styles.progress_trail}
+            style={{
+              width: `calc(${
+                currentTime / duration
+              } * calc(100% - 12px) + 6px)`,
+            }}
+          />
         </div>
         <p>
           <span>{formatTime(currentTime)}</span>
@@ -99,4 +102,4 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
       </div>
     </div>
   );
-};
+}
