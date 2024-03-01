@@ -1,13 +1,20 @@
 @use "media";
 
 :root {
-    /* spacers */
-    --tiny-spacer: 8px;
-    --small-spacer: 16px;
+    --borderRadius: 8px;
+
+    --tinierSpacer: 4px;
+    --tinySpacer: 8px;
+    --smallSpacer: 16px;
     --spacer: 24px;
-    --medium-spacer: 48px;
-    --large-spacer: 80px;
-    
-    /* border radius */
-    --b-radius: 8px;
+    --largeSpacer: 48px;
+    --largerSpacer: 64px;
+    --hugeSpacer: 180px;
+
+    --fontSmall: 1rem;
+    --fontMedium: 1.3rem;
+    --fontSmallHeader: 1.6rem;
+    --fontHeader: 2.4rem;
+    --fontButton: 1.4rem;
+    --fontHuge: 3.4rem;
 }

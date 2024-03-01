@@ -1,16 +1,21 @@
 :root {
-    --primary: #3C257E;
-    --primary-light: #F7F1FF;
-    --primary-alternative: #9747FF;
-    
-    --red: #F70000;
+    --textPrimary: white;
+    --textSecondary: #5CE1E6;
+    --textTertiary: #FF8484;
 
-    --background-primary: #E8E8E8;
-    --background-secondary: #FFFFFF;
+    --primary: #263547;
+    --secondary: #354564;
 
-    --text-dark: black;
-    --text-dark-gray: #6A6A6A;
-    --text-medium-gray: #808080;
-    --text-light-gray: #AEAEAE;
-    --text-light: white;
+    --whiteButtonFill: rgba(255, 255, 255, 0.3);
+    --blurpleButtonFill: rgba(38, 53, 71, 0.3);
+    --slightlyTransparentBlue: rgba(92, 225, 230, 0.8);
+
+    --active-player: white;
+    --inactive-player: #00aeb0;
+
+    --song-aggressive: #ba5d5d;
+    --song-dramatic: #bab15d;
+    --song-sad: #6864bd;
+    --song-happy: #5db1ba;
+    --song-romantic: #ba5d9e;
 }
