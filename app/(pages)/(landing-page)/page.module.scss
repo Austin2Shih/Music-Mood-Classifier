@@ -5,7 +5,7 @@
     justify-content: center;
     text-align: center;
     padding: var(--larger-spacer) 0;
-    gap: var(--medium-spacer);
+    gap: var(--larger-spacer);
 }
 
 .divider {
@@ -39,10 +39,5 @@
             color: var(--text-secondary);
         }
     }
-}
-
-.mood_app_container {
-    width: 100%;
-    padding: var(--large-spacer);
 }
 

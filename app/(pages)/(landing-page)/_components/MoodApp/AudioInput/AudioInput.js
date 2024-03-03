@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone';
 
 import styles from './AudioInput.module.css';
 import SubmissionPopup from './SubmissionPopup';
-import AudioPlayer from '../AudioPlayer/AudioPlayer';
+import AudioPlayer from '../../AudioPlayer/AudioPlayer';
 
 export default function AudioInput({ setData }) {
   const [file, setFile] = useState(null);

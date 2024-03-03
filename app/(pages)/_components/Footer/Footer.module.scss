@@ -1,89 +1,43 @@
 @use 'media';
 
 .container {
-    width: 100%;
-
     display: flex;
     flex-direction: column;
+    gap: var(--large-spacer);
     justify-content: center;
-    
-    background-color: var(--secondary);
-    .credit {
-        width: 100%;
-        padding: var(--tiny-spacer);
-        text-align: center;
-        background-color: var(--primary);
-        color: var(--text-light);
-        @include media.phone {
-            background: none;
-            margin-bottom: var(--medium-spacer);
-            color: var(--text-dark);
-        }
-    }
-}
-
-.content_container {
-    /* box sizing */
+    padding: var(--large-spacer);
     width: 100%;
-    padding: var(--medium-spacer);
 
-    /* flexbox */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: var(--medium-spacer);
-    @include media.phone {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+    >h3 {
+        color: var(--text-tertiary);
         text-align: center;
     }
 
-    h2 {
-        color: var(--primary);
-        font-size: 1.5rem;
-        margin-bottom: var(--tiny-spacer);
-    }
-
-    .description>p {
-        @include media.phone {
-            display: none;
-        }
-    }
-}
-
-.navigation {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    gap: var(--medium-spacer);
-
-    @include media.phone {
-        flex-direction: column;
-    }
-
-    .learn_more, .projects {
+    .icon_container {
+        width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: var(--spacer);
 
-        .learn_more_links {
+        div {
+            width: calc(100% / 3);
             display: flex;
             flex-direction: column;
-            gap: var(--tiny-spacer);
-        }
+            justify-content: center;
+            gap: var(--spacer);
+            text-align: center;
 
-        .project_link_columns {
-            display: flex;
-            flex-direction: row;
-            gap: var(--tiny-spacer);
-            @include media.phone {
-                flex-direction: column;
+            >h3 {
+                color: var(--text-tertiary);
             }
 
-            >div {
+            .icon {
+                color: var(--text-secondary);
                 display: flex;
-                flex-direction: column;
-                gap: var(--tiny-spacer);
+                flex-direction: row;
+                justify-content: center;
+                font-size: var(--font-huge);
             }
         }
     }

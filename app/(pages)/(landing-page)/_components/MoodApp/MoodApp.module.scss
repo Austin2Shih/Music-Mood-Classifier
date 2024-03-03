@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    padding: 0 var(--larger-spacer);
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-spacer);
+
+    >h3 {
+        font-size: var(--font-large);
+        color: var(--text-tertiary);
+    }
+
+    .text_container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacer);
+        >p {
+            font-size: var(--font-medium);
+            >span {
+                color: var(--text-secondary);
+                font-weight: 500;
+            }
+        }
+    }
+        
+}
