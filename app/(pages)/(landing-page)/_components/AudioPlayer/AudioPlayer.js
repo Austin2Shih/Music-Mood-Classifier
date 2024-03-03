@@ -12,6 +12,12 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
     // Define the audio element when the component mounts (client-side)
     audioRef.current = new Audio();
     audioRef.current.src = audioFileUrl;
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause(); // Pause the audio when unmounting
+        audioRef.current = null;
+      }
+    };
   }, [audioFileUrl]);
 
   const {
@@ -23,6 +29,7 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
     pauseAudio,
     scrubAudio,
     adjustVolume,
+    resetAudioRef,
   } = useAudioPlayer(audioRef);
 
   useEffect(() => {
@@ -30,13 +37,8 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
   }, [currentTime, setCurrentTime]);
 
   useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause(); // Pause the audio when unmounting
-        audioRef.current = null; // Reset the audioRef
-      }
-    };
-  }, []);
+    resetAudioRef();
+  }, [audioFileUrl, resetAudioRef]);
 
   // Seek to a specific time in the audio
   const handleScrub = (e) => {

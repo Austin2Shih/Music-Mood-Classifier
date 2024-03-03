@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useAudioPlayer = (audioRef) => {
   const [isReady, setIsReady] = useState(false);
@@ -6,6 +6,7 @@ const useAudioPlayer = (audioRef) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
+  const [audioKey, setAudioKey] = useState(0); // New state to trigger useEffect
 
   const handleAudioEnded = () => {
     setIsPlaying(false);
@@ -28,6 +29,17 @@ const useAudioPlayer = (audioRef) => {
       setIsReady(true); // Mark the audio element as ready
     }
 
+    const resetPlayer = () => {
+      audioRef.current.pause();
+      setIsPlaying(false);
+      setCurrentTime(0);
+      setDuration(0);
+      setVolume(1);
+    };
+
+    // Call resetPlayer when audioRef changes
+    resetPlayer();
+
     return () => {
       if (audioElement) {
         audioElement.removeEventListener('timeupdate', updateTime);
@@ -35,7 +47,7 @@ const useAudioPlayer = (audioRef) => {
         audioElement.removeEventListener('ended', handleAudioEnded); // Add event listener for audio ended
       }
     };
-  }, [audioRef]);
+  }, [audioKey, audioRef]);
 
   const playAudio = () => {
     if (isReady) {
@@ -66,6 +78,10 @@ const useAudioPlayer = (audioRef) => {
     }
   };
 
+  const resetAudioRef = useCallback(() => {
+    setAudioKey((prevKey) => prevKey + 1);
+  }, []);
+
   return {
     isReady,
     isPlaying,
@@ -76,6 +92,7 @@ const useAudioPlayer = (audioRef) => {
     pauseAudio,
     scrubAudio,
     adjustVolume,
+    resetAudioRef,
   };
 };
 
