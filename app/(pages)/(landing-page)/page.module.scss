@@ -1,3 +1,5 @@
+@use 'media';
+
 .container {
     width: 100%;
     display: flex;
@@ -18,11 +20,12 @@
 .welcome {
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 100%;
+    max-width: 760;
     display: flex;
     flex-direction: column;
     gap: var(--small-spacer);
-    padding: 0 var(--huge-spacer);
+    padding: 0 var(--larger-spacer);
 
 
     .title {
@@ -31,10 +34,16 @@
 
     .subtitle {
         color: var(--text-tertiary);
+        @include media.phone {
+            text-align: left;
+        }
     }
 
     .intro {
         font-weight: 400;
+        @include media.phone {
+            text-align: left;
+        }
         >span {
             color: var(--text-secondary);
         }

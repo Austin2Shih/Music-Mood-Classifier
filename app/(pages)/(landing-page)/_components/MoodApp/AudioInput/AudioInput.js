@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-import styles from './AudioInput.module.css';
+import styles from './AudioInput.module.scss';
 import SubmissionPopup from './SubmissionPopup';
 import AudioPlayer from '../../AudioPlayer/AudioPlayer';
 

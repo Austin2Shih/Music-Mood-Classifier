@@ -18,4 +18,21 @@
     --font-large: 2.4rem;
     --font-button: 1.4rem;
     --font-huge: 3.4rem;
+
+    @include media.phone {
+        --tiny-spacer: 4px;
+        --small-spacer: 8px;
+        --spacer: 12px;
+        --medium-spacer: 16px;
+        --large-spacer: 24px;
+        --larger-spacer: 32px;
+        --huge-spacer: 100px;
+    
+        --font-small: 1rem;
+        --font-medium: 1.15rem;
+        --font-small-header: 1.3rem;
+        --font-large: 1.8rem;
+        --font-button: 1.15rem;
+        --font-huge: 2.2rem;
+    }
 }

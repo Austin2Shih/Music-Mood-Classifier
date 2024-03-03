@@ -34,11 +34,7 @@ export default function AdditionalInfo() {
         <h3>a little more about this project</h3>
         <div className={styles.intro_segments}>
           {introInfo.map((segment, index) => (
-            <div
-              key={index}
-              className={styles.segment}
-              style={{ width: `${100 / introInfo.length}%` }}
-            >
+            <div key={index} className={styles.segment}>
               <h3>{segment.title}</h3>
               <div className={styles.divider} />
               <div className={styles.text_container}>

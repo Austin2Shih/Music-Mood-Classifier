@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import styles from './AudioDisplay.module.css';
+import styles from './AudioDisplay.module.scss';
 
 import AudioPlayer from '../../AudioPlayer/AudioPlayer';
 import MoodRanking from './MoodRanking';
