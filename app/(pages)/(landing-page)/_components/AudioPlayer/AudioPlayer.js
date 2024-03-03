@@ -27,7 +27,7 @@ export default function AudioPlayer({ audioFileUrl, setCurrentTime }) {
 
   useEffect(() => {
     if (setCurrentTime) setCurrentTime(currentTime);
-  }, [currentTime]);
+  }, [currentTime, setCurrentTime]);
 
   useEffect(() => {
     return () => {
