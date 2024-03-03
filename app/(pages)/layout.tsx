@@ -5,7 +5,7 @@ import '@globals/styles/globals.scss';
 import fonts from '@globals/fonts';
 import metadata from '@globals/metadata.json';
 
-import Navbar from '@components/Navbar/Navbar';
+// import Navbar from '@components/Navbar/Navbar';
 import Footer from './_components/Footer/Footer';
 
 export { metadata };

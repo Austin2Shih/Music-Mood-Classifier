@@ -7,20 +7,19 @@ const useAudioPlayer = (audioRef) => {
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
 
-  const updateTime = () => {
-    setCurrentTime(audioRef.current.currentTime);
-  };
-
-  const updateDuration = () => {
-    setDuration(audioRef.current.duration);
-  };
-
   const handleAudioEnded = () => {
     setIsPlaying(false);
     setCurrentTime(0);
   };
 
   useEffect(() => {
+    const updateTime = () => {
+      setCurrentTime(audioRef.current.currentTime);
+    };
+
+    const updateDuration = () => {
+      setDuration(audioRef.current.duration);
+    };
     const audioElement = audioRef.current;
     if (audioElement) {
       audioElement.addEventListener('timeupdate', updateTime);
