@@ -1,17 +1,17 @@
 .player_container {
     width: 100%;
-    padding: var(--tinySpacer);
+    padding: var(--tiny-spacer);
 }
 
 .timing_controls {
     display: flex;
     flex-direction: column;
-    gap: var(--tinierSpacer);
+    gap: var(--tinier-spacer);
     align-items: center;
 }
 
 .pause_play {
-    color: var(--textPrimary);
+    color: var(--text-primary);
     font-size: 2rem;
 }
 
@@ -30,7 +30,7 @@
     appearance: none;
     width: 100%;
     height: 6px;
-    background: var(--textPrimary);
+    background: var(--text-primary);
     border-radius: 3px;
 }
 
@@ -38,7 +38,7 @@
     -webkit-appearance: none;
     width: 12px;
     height: 12px;
-    background: var(--textSecondary);
+    background: var(--text-secondary);
     border-radius: 50%;
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@
 
 .progress_trail {
     height: 6px;
-    background-color: var(--textSecondary);
+    background-color: var(--text-secondary);
     position: absolute;
     top: 50%;
     left: 0;

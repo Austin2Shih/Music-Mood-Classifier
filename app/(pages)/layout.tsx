@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={fonts}>
         {/* <Navbar navLinks={navLinks} /> */}
         {children}
-        {/* <Footer navLinks={navLinks} /> */}
+        <Footer navLinks={navLinks} />
       </body>
     </html>
   );

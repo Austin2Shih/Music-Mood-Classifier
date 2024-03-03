@@ -42,7 +42,7 @@
 .loader {
     border: 8px solid #f3f3f3;
     /* Light grey */
-    border-top: 8px solid var(--textSecondary);
+    border-top: 8px solid var(--text-secondary);
     /* Blue */
     border-radius: 50%;
     width: 40px;

@@ -2,7 +2,7 @@
 
 html {
     font-family: 'poppins';
-    color: var(--textPrimary);
+    color: var(--text-primary);
 }
 
 body {
@@ -25,16 +25,16 @@ p {
 }
 
 h1 {
-    color: var(--textSecondary);
+    color: var(--text-secondary);
     font-weight: 700;
-    font-size: var(--fontHeader);
+    font-size: var(--font-header);
     letter-spacing: 0.03em;
 }
 
 h2 {
-    color: var(--textTertiary);
+    color: var(--text-tertiary);
     font-weight: 500;
-    font-size: var(--fontSmallHeader);
+    font-size: var(--font-smallHeader);
     letter-spacing: 0.03em;
     text-align: center;
     margin-bottom: 12px;
@@ -43,13 +43,13 @@ h2 {
 p {
     font-style: normal;
     font-weight: 300;
-    font-size: var(--fontSmall);
+    font-size: var(--font-small);
     letter-spacing: 0.06em;
 }
 
 a,
 button {
-    color: var(--textPrimary)
+    color: var(--text-primary)
 }
 
 button {
