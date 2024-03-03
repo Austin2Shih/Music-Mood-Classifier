@@ -1,3 +1,5 @@
+@use 'media';
+
 .container {
     padding: 0 var(--larger-spacer);
 
@@ -18,10 +20,18 @@
     flex-direction: row;
     gap: var(--large-spacer);
 
+    @include media.tablet {
+        flex-direction: column;
+    }
+
     .segment {
         display: flex;
         flex-direction: column;
         gap: var(--tiny-spacer);
+        width: 33%;
+        @include media.tablet {
+            width: 100%;
+        }
         >h3 {
             color: var(--text-secondary);
         }

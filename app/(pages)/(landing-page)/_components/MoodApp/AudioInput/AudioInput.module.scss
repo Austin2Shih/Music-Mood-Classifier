@@ -1,3 +1,5 @@
+@use 'media';
+
 .input_container {
     width: 100%;
     display: flex;
@@ -16,6 +18,10 @@
     flex-grow: 2;
     background-color: var(--secondary);
     cursor: pointer;
+    padding: var(--spacer);
+    @include media.phone {
+        height: 200px;
+    }
 }
 
 .input_options {
