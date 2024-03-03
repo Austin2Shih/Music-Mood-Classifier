@@ -26,6 +26,11 @@ export default function AudioDisplay({ songData }) {
     );
   }, [mood]);
 
+  useEffect(() => {
+    setCurrentTime(0);
+    setMood(predictions[0]);
+  }, [songData, predictions]);
+
   return (
     <div className={styles.display_container}>
       <div className={styles.display_card}>
