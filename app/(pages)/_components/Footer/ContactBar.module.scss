@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacer);
+    justify-content: center;
+    >a {
+        color: var(--text-secondary);
+        font-size: var(--font-large);
+    }
+}

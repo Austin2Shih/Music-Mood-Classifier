@@ -1,0 +1,21 @@
+@use "media";
+
+:root {
+    --borderRadius: 8px;
+
+    --tinier-spacer: 4px;
+    --tiny-spacer: 8px;
+    --small-spacer: 16px;
+    --spacer: 24px;
+    --medium-spacer: 32px;
+    --large-spacer: 48px;
+    --larger-spacer: 64px;
+    --huge-spacer: 180px;
+
+    --font-small: 1rem;
+    --font-medium: 1.3rem;
+    --font-small-header: 1.6rem;
+    --font-large: 2.4rem;
+    --font-button: 1.4rem;
+    --font-huge: 3.4rem;
+}

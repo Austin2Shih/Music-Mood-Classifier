@@ -1,9 +1,0 @@
-.homepage_container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: var(--largerSpacer);
-    gap: 36px;
-}

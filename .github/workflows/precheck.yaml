@@ -1,0 +1,38 @@
+name: PR Code Check
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    environment:
+      name: development
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.1.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Linting check
+        run: npm run lint
+
+      - name: TypeScript check
+        run: npm run type-check
+
+      - name: Build Next.js app
+        env:
+          MONGO_CONNECTION_STRING: ${{ secrets.MONGO_CONNECTION_STRING }}
+        run: npm run build
+
+      - name: Success
+        run: echo "🚧 Build successful 🚧"
